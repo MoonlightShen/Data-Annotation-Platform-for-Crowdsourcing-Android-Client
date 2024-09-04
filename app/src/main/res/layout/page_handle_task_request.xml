@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.echo.datatag3.mvvm.viewmodel.HandleTaskRequestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        tools:context=".mvvm.view.HandleTaskRequestPage">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftIcon="@drawable/common_left_gray"
+            app:title="处理任务申请" />
+
+        <TextView
+            android:id="@+id/textView64"
+            style="@style/TASK_INFO_PAGE_TITLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="申请人"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleBar" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/home_riv_user_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/test_user_avatar"
+            app:layout_constraintStart_toStartOf="@+id/textView64"
+            app:layout_constraintTop_toBottomOf="@+id/textView64"
+            app:round="25dp" />
+
+        <TextView
+            android:id="@+id/textView65"
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{viewModel.model.requester.nickname}"
+            tools:text="test_user_name"
+            app:layout_constraintStart_toEndOf="@+id/home_riv_user_avatar"
+            app:layout_constraintTop_toTopOf="@+id/home_riv_user_avatar" />
+
+        <TextView
+            android:id="@+id/textView66"
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{viewModel.model.requester.age}"
+            app:layout_constraintBottom_toBottomOf="@+id/home_riv_user_avatar"
+            app:layout_constraintStart_toEndOf="@+id/home_riv_user_avatar"
+            tools:text="21" />
+
+        <TextView
+            android:id="@+id/textView69"
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            gender="@{viewModel.model.requester.gender}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_riv_user_avatar"
+            app:layout_constraintStart_toEndOf="@+id/textView66"
+            tools:text="男" />
+
+        <TextView
+            android:id="@+id/textView68"
+            style="@style/TASK_INFO_PAGE_TITLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="总完成数"
+            app:layout_constraintStart_toStartOf="@+id/home_riv_user_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/home_riv_user_avatar" />
+
+        <TextView
+            android:id="@+id/textView70"
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text='@{viewModel.model.totalComplete==0?"暂无":String.valueOf(viewModel.model.totalComplete)}'
+            app:layout_constraintBottom_toBottomOf="@+id/textView68"
+            app:layout_constraintStart_toEndOf="@+id/textView68"
+            app:layout_constraintTop_toTopOf="@+id/textView68"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/textView71"
+            style="@style/TASK_INFO_PAGE_TITLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="总完成率"
+            app:layout_constraintStart_toEndOf="@+id/textView70"
+            app:layout_constraintTop_toTopOf="@+id/textView68" />
+
+        <TextView
+            android:id="@+id/textView72"
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text='@{viewModel.model.totalCompletionRate==0?"暂无":String.valueOf(viewModel.model.totalCompletionRate)+"%"}'
+            app:layout_constraintBottom_toBottomOf="@+id/textView68"
+            app:layout_constraintStart_toEndOf="@+id/textView71"
+            app:layout_constraintTop_toTopOf="@+id/textView68"
+            tools:text="95%" />
+
+        <TextView
+            android:id="@+id/textView67"
+            style="@style/TASK_INFO_PAGE_TITLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            android:text="当前任务历史完成记录"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView68" />
+
+        <TextView
+            android:id="@+id/textView74"
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="完成时间"
+            app:layout_constraintEnd_toEndOf="@+id/textView67"
+            app:layout_constraintStart_toStartOf="@+id/textView67"
+            app:layout_constraintTop_toBottomOf="@+id/textView67" />
+
+        <TextView
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="提交数据量"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView74" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/textView73"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView74"
+            tools:listitem="@layout/task_complete_simple_record" />
+
+        <TextView
+            android:id="@+id/textView73"
+            style="@style/TASK_INFO_PAGE_TITLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="距离自动拒绝还剩："
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/home_riv_user_avatar" />
+
+        <TextView
+            style="@style/TASK_INFO_PAGE_CONTENT"
+            zh_ddHHmmSS="@{viewModel.model.requestTime}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView73"
+            app:layout_constraintStart_toEndOf="@+id/textView73"
+            app:layout_constraintTop_toTopOf="@+id/textView73"
+            tools:text="6天23时59分59秒" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:text="拒绝"
+                android:textColor="@color/black_gray"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appCompatButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:text="同意"
+                android:textColor="@color/default_white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

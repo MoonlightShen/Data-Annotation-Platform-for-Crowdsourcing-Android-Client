@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bg">#F5F7F9</color>
+
+    <color name="colorPrimary">@color/default_light_blue</color>
+    <color name="colorPrimaryDark">@color/default_blue</color>
+    <color name="statusBarColor">@color/default_light_blue</color>
+    <color name="colorButtonNormal">@color/default_light_blue</color>
+
+    <color name="default_black">#FF000000</color>
+    <color name="default_white">#FFFFFFFF</color>
+    <color name="default_red">#F15C58</color>
+    <color name="default_blue">#299EE3</color>
+    <color name="default_light_blue">#74BEEB</color>
+    <color name="default_gray">#AFBCC3</color>
+    <color name="default_green">#388E3C</color>
+    <color name="default_yellow">#FEC005</color>
+
+    <color name="black_gray">#3D3D3D</color>
+
+
+    <color name="toast_default_text_color">@color/default_white</color>
+    <color name="toast_normal_tint_color">#353A3E</color>
+    <color name="toast_error_color">@color/default_red</color>
+    <color name="toast_info_color">@color/default_light_blue</color>
+    <color name="toast_success_color">@color/default_green</color>
+    <color name="toast_warning_color">@color/default_yellow</color>
+
+    <color name="default_pb_track_color">@color/default_gray</color>
+
+    <color name="task_title_color">#CC4F6F81</color>
+
+</resources>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/background_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/default_white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editing_task_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:text="任务标题任务标题任务标题"
+                android:textColor="@color/task_title_color"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_unit_point"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/common_money_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+            <TextView
+                android:id="@+id/task_tv_unit_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:minWidth="110dp"
+                android:textColor="@color/default_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_unit_point"
+                app:layout_constraintStart_toEndOf="@+id/ic_unit_point"
+                app:layout_constraintTop_toTopOf="@+id/ic_unit_point"
+                tools:text="1000 积分/条数据" />
+
+            <ImageView
+                android:id="@+id/ic_group_size"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/common_database_gray"
+                app:layout_constraintStart_toEndOf="@+id/task_tv_unit_point"
+                app:layout_constraintTop_toTopOf="@+id/ic_unit_point" />
+
+            <TextView
+                android:id="@+id/task_tv_group_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:textColor="@color/default_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_group_size"
+                app:layout_constraintStart_toEndOf="@+id/ic_group_size"
+                app:layout_constraintTop_toTopOf="@+id/ic_group_size"
+                tools:text="10000 数据/组任务" />
+
+            <ImageView
+                android:id="@+id/ic_end_time"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/common_clock_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_unit_point" />
+
+            <TextView
+                android:id="@+id/task_tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:minWidth="110dp"
+                android:textColor="@color/default_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_end_time"
+                app:layout_constraintStart_toEndOf="@+id/ic_end_time"
+                app:layout_constraintTop_toTopOf="@+id/ic_end_time"
+                tools:text="2024年05月01日 12时00分" />
+
+            <ImageView
+                android:id="@+id/ic_tagging_scene_type"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/common_type_gray"
+                app:layout_constraintStart_toEndOf="@+id/task_tv_end_time"
+                app:layout_constraintTop_toTopOf="@+id/ic_end_time" />
+
+            <TextView
+                android:id="@+id/task_tv_tagging_scene_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:textColor="@color/default_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_tagging_scene_type"
+                app:layout_constraintStart_toEndOf="@+id/ic_tagging_scene_type"
+                app:layout_constraintTop_toTopOf="@+id/ic_tagging_scene_type"
+                tools:text="未指定标注场景" />
+
+            <LinearLayout
+                android:id="@+id/task_linear_tags"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ic_end_time" />
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/ic_visible_level"-->
+            <!--                android:layout_width="15dp"-->
+            <!--                android:layout_height="15dp"-->
+            <!--                android:layout_marginStart="8dp"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:layout_marginBottom="10dp"-->
+            <!--                android:src="@drawable/common_visible_gray"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/task_tv_tagging_scene_type"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/ic_unit_point" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/task_tv_visible_level"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="5dp"-->
+            <!--                android:fontFamily="@font/ali_puhui_bold"-->
+            <!--                android:textColor="@color/default_gray"-->
+            <!--                android:textSize="12sp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/ic_visible_level"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/ic_visible_level"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/ic_visible_level"-->
+            <!--                tools:text="未设置可见状态" />-->
+
+            <TextView
+                android:id="@+id/stateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ali_puhui_bold"
+                android:text="编辑中"
+                android:textColor="#444444"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/task_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/task_title" />
+
+            <ImageView
+                android:id="@+id/icState"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/task_state_edit"
+                app:layout_constraintBottom_toBottomOf="@+id/stateText"
+                app:layout_constraintEnd_toStartOf="@+id/stateText"
+                app:layout_constraintTop_toTopOf="@+id/stateText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

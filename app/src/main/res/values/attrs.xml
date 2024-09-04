@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="ProgressBarStyle" format="reference" />
+    <declare-styleable name="ProgressBar">
+        <!--起始进度，默认是0-->
+        <attr name="pb_start_progress" format="integer" />
+        <!--终止进度，默认是60-->
+        <attr name="pb_end_progress" format="integer" />
+        <!--渐变效果的起始颜色，默认是#FFC288-->
+        <attr name="pb_start_color" format="color" />
+        <!--渐变效果的终止颜色，默认是#FF8F5D-->
+        <attr name="pb_end_color" format="color" />
+        <!--是否显示轨迹背景， 默认是false-->
+        <attr name="pb_isTracked" format="boolean" />
+        <!--进度条的宽度（边界宽度）,默认是16dp-->
+        <attr name="pb_track_width" format="dimension" />
+        <!--轨迹背景的颜色， 默认是#f3e5dd-->
+        <attr name="pb_track_color" format="color" />
+        <!--动画时长， 默认是1200ms-->
+        <attr name="pb_progress_duration" format="integer" />
+        <!--是否显示进度值文本， 默认是true-->
+        <attr name="pb_progress_textVisibility" format="boolean" />
+        <!--进度值的颜色， 默认是R.attr.colorAccent-->
+        <attr name="pb_progress_textColor" format="color" />
+        <!--进度值的文本字体大小， 默认是14sp-->
+        <attr name="pb_progress_textSize" format="dimension" />
+        <!--动画类型， 默认是AccelerateDecelerateInterpolator-->
+        <attr name="pb_animate_type" format="enum">
+            <!--加速减速插值器-->
+            <enum name="AccelerateDecelerateInterpolator" value="0" />
+            <!--线性插值器-->
+            <enum name="LinearInterpolator" value="1" />
+            <!--加速插值器-->
+            <enum name="AccelerateInterpolator" value="2" />
+            <!--减速插值器-->
+            <enum name="DecelerateInterpolator" value="3" />
+            <enum name="OvershootInterpolator" value="4" />
+        </attr>
+        <!--圆角半径,默认5dp-->
+        <attr name="pb_corner_radius" format="dimension" />
+        <!--文字距离view的padding，默认5dp-->
+        <attr name="pb_text_padding_bottom" format="dimension" />
+        <!--设置进度值是否跟随控件动画移动， 默认是true-->
+        <attr name="pb_text_movedEnable" format="boolean" />
+    </declare-styleable>
+
+    <attr name="RippleViewStyle" format="reference" />
+    <declare-styleable name="RippleView">
+        <!--水波的透明度，默认90-->
+        <attr name="rv_alpha" format="integer" />
+        <!--水波变化的帧率，默认是10-->
+        <attr name="rv_frameRate" format="integer" />
+        <!--水波持续的时间，默认是400ms-->
+        <attr name="rv_rippleDuration" format="integer" />
+        <!--水波的颜色， 默认白色-->
+        <attr name="rv_color" format="color" />
+        <!--水波是否从控件的中心起，默认是false-->
+        <attr name="rv_centered" format="boolean" />
+        <!--水波的样式-->
+        <attr name="rv_type" format="enum">
+            <!--单波纹-->
+            <enum name="simpleRipple" value="0" />
+            <!--双波纹-->
+            <enum name="doubleRipple" value="1" />
+            <!--方形-->
+            <enum name="rectangle" value="2" />
+        </attr>
+        <!--水波的padding，默认是0-->
+        <attr name="rv_ripplePadding" format="dimension" />
+        <!--是否支持缩放动画，默认：false-->
+        <attr name="rv_zoom" format="boolean" />
+        <!--缩放倍率，默认是1.03F-->
+        <attr name="rv_zoomScale" format="float" />
+        <!--缩放动画持续的时间，默认是200ms-->
+        <attr name="rv_zoomDuration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableLayout">
+        <!--动画持续的时间，默认是300ms-->
+        <attr name="el_duration" format="integer" />
+        <!--是否是展开的，默认是false-->
+        <attr name="el_expanded" format="boolean" />
+        <!--视差效果，默认是1-->
+        <attr name="el_parallax" format="float" />
+        <!--对齐方式，默认是VERTICAL，垂直-->
+        <attr name="android:orientation" />
+    </declare-styleable>
+
+    <declare-styleable name="TabControlView">
+        <!--文字字体的大小，默认14sp-->
+        <attr name="tcv_textSize" format="dimension" />
+        <!--没选中的文字颜色，默认#299EE3-->
+        <attr name="tcv_unselectedTextColor" format="reference" />
+        <!--选中的文字颜色， 默认Color.WHITE-->
+        <attr name="tcv_selectedTextColor" format="reference" />
+        <!--没选中的背景颜色， 默认Color.TRANSPARENT-->
+        <attr name="tcv_unselectedColor" format="reference" />
+        <!--选中的背景颜色， 默认#299EE3-->
+        <attr name="tcv_selectedColor" format="reference" />
+        <!--边框宽度，默认1dp-->
+        <attr name="tcv_strokeWidth" format="dimension" />
+        <!--选项卡间的padding-->
+        <attr name="tcv_item_padding" format="dimension" />
+        <!--选项卡水平间的padding-->
+        <attr name="tcv_item_padding_horizontal" format="dimension" />
+        <!--选项卡垂直间的padding-->
+        <attr name="tcv_item_padding_vertical" format="dimension" />
+        <!--选项卡中展示的内容-->
+        <attr name="tcv_items" format="reference" />
+        <!--选项卡中选中的内容（默认和展示的一样）-->
+        <attr name="tcv_values" format="reference" />
+        <!--是否等宽显示，默认false-->
+        <attr name="tcv_equalWidth" format="boolean" />
+        <!--是否伸展开，填充整个父布局，默认false-->
+        <attr name="tcv_stretch" format="boolean" />
+        <!--默认选中项的索引-->
+        <attr name="tcv_defaultSelection" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SlideMenuLayout">
+        <attr format="enum" name="slideMode">
+            <enum name="left" value="1001"/>
+            <enum name="right" value="1002"/>
+            <enum name="both" value="1003"/>
+            <enum name="none" value="1004"/>
+        </attr>
+        <attr format="dimension" name="slidePadding"/>
+        <attr format="integer" name="slideTime"/>
+        <attr format="boolean" name="parallax"/>
+        <attr format="float" name="contentAlpha"/>
+        <attr format="color" name="contentShadowColor"/>
+        <attr format="boolean" name="contentToggle"/>
+        <attr format="boolean" name="allowDragging"/>
+    </declare-styleable>
+</resources>

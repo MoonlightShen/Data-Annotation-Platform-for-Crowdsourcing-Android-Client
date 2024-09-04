@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.echo.datatag3.mvvm.viewmodel.LabelClassificationTaggingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        tools:context=".mvvm.view.LabelClassificationTaggingPage">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F4F3F8"
+            tb_save_btn="@{viewModel.model.hasEdited}"
+            app:leftIcon="@drawable/common_left_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rightIconPadding="10dp"
+            app:rightIcon="@drawable/common_menu_gray"
+            app:title="标注数据"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/title_bar"
+            tools:layout_editor_absoluteX="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelClassification"
+                tools:layout_editor_absoluteX="42dp">
+
+                <com.fphoenixcorneae.progressbar.SmartProgressBar
+                    android:id="@+id/task_remaining_time_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView132"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:spb_animated="true"
+                    app:spb_animated_duration="2000"
+                    app:spb_bottom_left_radius="20dp"
+                    app:spb_bottom_right_radius="20dp"
+                    app:spb_max="100"
+                    smart_progress="@{viewModel.model.hasTagged==null?0:viewModel.model.hasTagged.size()}"
+                    app:spb_progress_bar_bg_color="@color/light_gray"
+                    app:spb_progress_center_color="#77A6E1"
+                    app:spb_progress_end_color="#74BEEB"
+                    app:spb_progress_start_color="#3FD2EF"
+                    app:spb_shape_style="HORIZONTAL"
+                    app:spb_top_left_radius="20dp"
+                    app:spb_top_right_radius="20dp" />
+
+                <TextView
+                    android:id="@+id/textView132"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="40dp"
+                    android:textAlignment="textEnd"
+                    android:text='@{viewModel.model.hasTagged==null?"0%":viewModel.model.hasTagged.size()+"%"}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="100%" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/labelClassification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardView7"
+            tools:layout_editor_absoluteX="20dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout9"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/background_frame"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/NormalTitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text='@{viewModel.model.currentDataIndex!=null&amp;&amp;viewModel.model.taggingDataList!=null&amp;&amp;viewModel.model.currentDataIndex&lt;viewModel.model.taggingDataList.size()?viewModel.model.taggingDataList.get(viewModel.model.currentDataIndex).dataContent:""}'
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="此处将展示您的数据" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tagsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:adapter="@{viewModel.model.optionAdapter}"
+                    app:layoutManager="@{viewModel.model.flexboxLayoutManager}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tagsLayoutInfo" />
+
+                <!--            <com.xuexiang.xui.widget.flowlayout.FlowTagLayout-->
+                <!--                android:id="@+id/tagsLayout"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginTop="5dp"-->
+                <!--                android:background="@color/lightHintText"-->
+                <!--                android:minHeight="50dp"-->
+                <!--                app:ftl_check_mode="display"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@+id/tagsLayoutInfo"/>-->
+
+                <TextView
+                    android:id="@+id/tagsLayoutInfo"
+                    style="@style/NormalTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="选项列表"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9" />
+
+                <TextView
+                    android:id="@+id/textView107"
+                    style="@style/NormalTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="多选"
+                    app:layout_constraintBottom_toBottomOf="@+id/tagsLayoutInfo"
+                    app:layout_constraintStart_toEndOf="@+id/tagsLayoutInfo"
+                    app:layout_constraintTop_toTopOf="@+id/tagsLayoutInfo" />
+
+                <TextView
+                    android:id="@+id/textView130"
+                    style="@style/NormalTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text='@{viewModel.model.multipleSelect==null||!viewModel.model.multipleSelect?"×":"√"}'
+                    app:layout_constraintBottom_toBottomOf="@+id/tagsLayoutInfo"
+                    app:layout_constraintStart_toEndOf="@+id/textView107"
+                    app:layout_constraintTop_toTopOf="@+id/tagsLayoutInfo" />
+
+                <TextView
+                    android:id="@+id/textView131"
+                    style="@style/NormalTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="自定义选项"
+                    app:layout_constraintBottom_toBottomOf="@+id/tagsLayoutInfo"
+                    app:layout_constraintStart_toEndOf="@+id/textView130"
+                    app:layout_constraintTop_toTopOf="@+id/tagsLayoutInfo" />
+
+                <TextView
+                    style="@style/NormalTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text='@{viewModel.model.customSelect==null||!viewModel.model.customSelect?"×":"√"}'
+                    app:layout_constraintBottom_toBottomOf="@+id/tagsLayoutInfo"
+                    app:layout_constraintStart_toEndOf="@+id/textView131"
+                    app:layout_constraintTop_toTopOf="@+id/tagsLayoutInfo" />
+
+                <com.echo.datatag3.widget.ExpandableLayout
+                    android:id="@+id/taskQuotaInfo"
+                    expanded="@{viewModel.model.customSelect}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/default_white"
+                    app:el_duration="300"
+                    app:el_expanded="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tagsLayout"
+                    tools:layout_editor_absoluteX="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:enabled="@{viewModel.model.customSelect}"
+                            android:fontFamily="@font/ali_puhui_bold"
+                            android:hint="添加自定义选项"
+                            android:text="@{viewModel.model.customOptionContent}"
+                            android:textColorHint="@color/light_gray"
+                            app:layout_constraintEnd_toStartOf="@+id/button2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="@{viewModel.model.customSelect}"
+                            android:text="确定"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.echo.datatag3.widget.ExpandableLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="2dp"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelClassification"
+                tools:layout_editor_absoluteX="42dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/tagging_last"
+                    android:background="#00000000"
+                    android:onClick="@{()->viewModel.lastData()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/tagging_next"
+                    android:background="#00000000"
+                    android:onClick="@{()->viewModel.nextData()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

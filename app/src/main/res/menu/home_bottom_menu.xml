@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_workbench"
+        android:title="工作台"
+        android:icon="@drawable/home_workbench"/>
+
+    <item
+        android:id="@+id/home_dataset"
+        android:title="数据集"
+        android:icon="@drawable/home_community"/>
+
+    <item
+        android:id="@+id/home_contact"
+        android:title="联系人"
+        android:icon="@drawable/home_contact"/>
+
+</menu>
