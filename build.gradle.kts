@@ -9,7 +9,6 @@ buildscript {
         maven("https://maven.aliyun.com/repository/jcenter")
     }
     dependencies {
-        //Gradle 插件及使用版本
         classpath("com.android.tools.build:gradle:8.0.2")
         classpath("org.greenrobot:greendao-gradle-plugin:3.3.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
