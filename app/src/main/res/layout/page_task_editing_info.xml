@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.echo.datatag3.mvvm.viewmodel.taskinfo.TaskEditingInfoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvm.view.task.TaskEditingInfoPage">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/task_edit_tb_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tb_save_btn="@{viewModel.model.hasEdited}"
+            app:leftIcon="@drawable/common_left_gray"
+            app:rightIcon="@drawable/common_menu_gray"
+            app:leftIconHeight="24dp"
+            app:leftIconWidth="24dp"
+            app:title="编辑任务"
+            app:titleColor="@color/default_black"
+            app:titleSize="20sp"
+            app:titleStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_edit_tb_title"
+            app:layout_constraintVertical_weight="1"
+            android:background="@color/app_bg">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/FORM_PAGE_CLASS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="任务信息"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/taskInformationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/default_white"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            style="@style/FORM_PAGE_TITLE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:layout_marginBottom="2dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="标题"
+                            app:layout_constraintBottom_toBottomOf="@+id/task_edit_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/task_edit_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/ali_puhui_bold"
+                            android:hint="在这里输入标题"
+                            android:text="@={viewModel.model.task.title}"
+                            android:textColorHint="@color/default_gray"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toEndOf="@+id/textView12"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:met_hideUnderline="true" />
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintTop_toBottomOf="@+id/task_edit_title" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="描述"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/task_edit_description"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:hint="在这里输入描述信息"
+                            android:inputType="textMultiLine"
+                            android:text="@={viewModel.model.task.description}"
+                            android:textColorHint="@color/default_gray"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView13"
+                            app:met_hideUnderline="true" />
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintTop_toBottomOf="@+id/task_edit_description" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="标签"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tagsArea"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tagsArea" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tagsArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="8dp"
+                            android:adapter="@{viewModel.model.tagsAdapter}"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/task_edit_add_tag"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toEndOf="@+id/textView16"
+                            app:layout_constraintTop_toBottomOf="@+id/view3"
+                            tools:listitem="@layout/flex_box_item" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:background="#00000000"
+                            android:id="@+id/task_edit_add_tag"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="5dp"
+                            android:onClick="@{() -> viewModel.addTag()}"
+                            android:src="@drawable/common_add_circle_gray"
+                            app:layout_constraintBottom_toBottomOf="@+id/tagsArea"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tagsArea" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView17"
+                    style="@style/FORM_PAGE_CLASS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="数据设置"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/taskInformationLayout" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/datasetSettingsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/default_white"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@id/textView18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="数据文件"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:textColor="@color/default_black"
+                            android:textSize="16sp"
+                            android:singleLine="true"
+                            android:text='@{viewModel.model.dataFiles!=null&amp;&amp;viewModel.model.dataFiles.size>0?"已选择"+String.valueOf(viewModel.model.dataFiles.size)+"个文件":"暂无"}'
+                            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                            app:layout_constraintEnd_toStartOf="@+id/task_edit_choose_datafile"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="@+id/task_edit_data_num"
+                            app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:background="#00000000"
+                            android:id="@+id/task_edit_choose_datafile"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="5dp"
+                            android:onClick="@{()->viewModel.chooseDatafiles()}"
+                            android:src="@drawable/common_upload_gray"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+                        <View
+                            android:id="@+id/view10"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                        <TextView
+                            android:id="@+id/textView55"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="数据量"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+                        <TextView
+                            android:id="@+id/task_edit_data_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:textColor="@color/default_black"
+                            android:textSize="16sp"
+                            android:text='@{viewModel.model.totalData==0?"还未选择数据文件":String.valueOf(viewModel.model.totalData)}'
+                            app:layout_constraintBottom_toBottomOf="@+id/textView55"
+                            app:layout_constraintStart_toStartOf="@+id/task_edit_group_size"
+                            app:layout_constraintTop_toTopOf="@+id/textView55" />
+
+                        <View
+                            android:id="@+id/view13"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="分组规模"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            android:onClick="@{() -> viewModel.model.expandGroupSize()}"
+                            app:layout_constraintBottom_toBottomOf="@+id/task_edit_group_size"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/task_edit_group_size" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/task_edit_group_size"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/ali_puhui_bold"
+                            android:hint="在这里输入内容"
+                            android:inputType="number"
+                            android:text="@={viewModel.model.groupSize}"
+                            android:textColorHint="@color/default_gray"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toEndOf="@+id/groupSizeInfoBtn"
+                            app:layout_constraintTop_toBottomOf="@id/view13"
+                            app:met_hideUnderline="true" />
+
+                        <ImageView
+                            android:id="@+id/groupSizeInfoBtn"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="3dp"
+                            android:src="@drawable/common_hint_black"
+                            android:onClick="@{() -> viewModel.model.expandGroupSize()}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+                            app:layout_constraintStart_toEndOf="@+id/textView20"
+                            app:layout_constraintTop_toTopOf="@+id/textView20" />
+
+                        <com.echo.datatag3.widget.ExpandableLayout
+                            android:id="@+id/groupSizeInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/default_white"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            expand="@{viewModel.model.groupSizeExpand}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/task_edit_group_size">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/ali_puhui_regular"
+                                android:text="对于标注者而言，任务的数据量。该值应 ≤ 数据条数"
+                                android:textColor="@color/default_gray"
+                                android:textSize="13sp" />
+
+                        </com.echo.datatag3.widget.ExpandableLayout>
+
+                        <View
+                            android:id="@+id/view9"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/groupSizeInfo" />
+
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="任务指标"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            android:onClick="@{() -> viewModel.model.expandTaskQuota()}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view9" />
+
+                        <ImageView
+                            android:id="@+id/taskQuotaInfoBtn"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="3dp"
+                            android:src="@drawable/common_hint_black"
+                            android:onClick="@{() -> viewModel.model.expandTaskQuota()}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView36"
+                            app:layout_constraintStart_toEndOf="@+id/textView36"
+                            app:layout_constraintTop_toTopOf="@+id/textView36" />
+
+                        <TextView
+                            android:id="@+id/task_edit_quota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text='@{viewModel.model.task.totalQuota==null||viewModel.model.task.totalQuota==0?"待计算":String.valueOf(viewModel.model.task.totalQuota)}'
+                            android:textColor="@color/default_black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView36"
+                            app:layout_constraintStart_toStartOf="@+id/task_edit_group_size"
+                            app:layout_constraintTop_toTopOf="@+id/textView36" />
+
+                        <com.echo.datatag3.widget.ExpandableLayout
+                            android:id="@+id/taskQuotaInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/default_white"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            expanded="@{viewModel.model.taskQuotaExpand}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView36">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/ali_puhui_regular"
+                                android:text="任务指标是系统自动计算的，计算公式为:
+                                    任务指标=数据条数÷分组规模(结果向上取整)"
+                                android:textColor="@color/default_gray"
+                                android:textSize="13sp" />
+
+                        </com.echo.datatag3.widget.ExpandableLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView21"
+                    style="@style/FORM_PAGE_CLASS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="任务设置"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/datasetSettingsLayout" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/taskSettingsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/default_white"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/textView123"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:gravity="center"
+                            android:text="延迟生效时间"
+                            android:onClick="@{() -> viewModel.model.expandStartDelay()}"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="3dp"
+                            android:onClick="@{() -> viewModel.model.expandStartDelay()}"
+                            android:src="@drawable/common_hint_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView123"
+                            app:layout_constraintStart_toEndOf="@+id/textView123"
+                            app:layout_constraintTop_toTopOf="@+id/textView123" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/appCompatImageButton3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="#00000000"
+                            android:onClick="@{() -> viewModel.chooseStartDelay()}"
+                            android:src="@drawable/common_time_gray"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView123"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView123" />
+
+                        <TextView
+                            zh_ddHHmmSS="@{viewModel.model.task.startDelay}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:textColor="@color/default_black"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageButton3"
+                            app:layout_constraintEnd_toStartOf="@+id/appCompatImageButton3"
+                            app:layout_constraintTop_toTopOf="@+id/appCompatImageButton3" />
+
+                        <com.echo.datatag3.widget.ExpandableLayout
+                            android:id="@+id/expandableLayout4"
+                            expand="@{viewModel.model.startDelayExpand}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/default_white"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView123">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/ali_puhui_regular"
+                                android:text="当任务通过系统审核后，会根据用户设置的生效延迟时间自动上线该任务，如果该项设置为0，则任务通过审核后会立即生效"
+                                android:textColor="@color/default_gray"
+                                android:textSize="13sp" />
+
+                        </com.echo.datatag3.widget.ExpandableLayout>
+
+                        <View
+                            android:id="@+id/view6"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintTop_toBottomOf="@+id/expandableLayout4" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:text="任务持续时间"
+                            android:textColor="@color/default_black"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+                        <TextView
+                            android:id="@+id/task_edit_end_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/ali_puhui_regular"
+                            android:textColor="@color/default_black"
+                            android:textSize="14sp"
+                            zh_ddHHmmSS="@{viewModel.model.task.duration}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                            app:layout_constraintEnd_toStartOf="@+id/task_edit_end_time_btn"
+                            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/task_edit_end_time_btn"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/common_time_gray"
+                            android:background="#00000000"
+                            android:onClick="@{() -> viewModel.chooseDuration()}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView15"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView15"/>
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#D8D8D8"
+                            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            style="@style/FORM_PAGE_TITLE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="可见范围"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                            app:layout_constraintStart_toEndOf="@+id/textView2"
+                            app:layout_constraintTop_toTopOf="@+id/textView2">
+
+                            <RadioButton
+                                android:id="@+id/task_edit_open_level_1"
+                                style="@style/TASK_EDIT_OPEN_LEVEL_RADIO"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="公开可见" />
+
+                            <RadioButton
+                                android:id="@+id/task_edit_open_level_2"
+                                style="@style/TASK_EDIT_OPEN_LEVEL_RADIO"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="部分可见" />
+
+                            <RadioButton
+                                android:id="@+id/task_edit_open_level_3"
+                                style="@style/TASK_EDIT_OPEN_LEVEL_RADIO"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="仅自己可见" />
+
+                        </RadioGroup>
+
+                        <com.echo.datatag3.widget.ExpandableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/default_white"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            expand="@{viewModel.model.task.visibleLevel!=3}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <com.echo.datatag3.widget.ExpandableLayout
+                                    android:id="@+id/expandableLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/default_white"
+                                    app:el_duration="300"
+                                    app:el_expanded="true"
+                                    expand="@{viewModel.model.task.visibleLevel==2}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <View
+                                            android:id="@+id/view2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:layout_marginTop="5dp"
+                                            android:background="#D8D8D8"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/textView6"
+                                            style="@style/FORM_PAGE_TITLE"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="40dp"
+                                            android:layout_marginTop="10dp"
+                                            android:gravity="center"
+                                            android:text="指定人员"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="20dp"
+                                            android:text='@{viewModel.model.task.inviteUsers==null||viewModel.model.task.inviteUsers.size()==0?"暂无":"已选择 " + viewModel.model.task.inviteUsers.size() + " 人"}'
+                                            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                                            app:layout_constraintEnd_toStartOf="@+id/task_edit_invite_user"
+                                            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+                                        <androidx.appcompat.widget.AppCompatImageButton
+                                            android:background="#00000000"
+                                            android:id="@+id/task_edit_invite_user"
+                                            android:layout_width="24dp"
+                                            android:layout_height="24dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:src="@drawable/common_add_circle_gray"
+                                            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.echo.datatag3.widget.ExpandableLayout>
+
+                                <View
+                                    android:id="@+id/view5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="#D8D8D8"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/expandableLayout" />
+
+                                <TextView
+                                    android:id="@+id/textView37"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:gravity="center"
+                                    android:fontFamily="@font/ali_puhui_regular"
+                                    android:text="单条数据积分"
+                                    android:textColor="@color/default_black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/task_edit_unit_point"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/task_edit_unit_point" />
+
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/task_edit_unit_point"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/ali_puhui_bold"
+                                    android:hint="在这里输入内容"
+                                    android:inputType="number"
+                                    android:text="@={viewModel.model.unitPoint}"
+                                    android:textColorHint="@color/default_gray"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_weight="1"
+                                    app:layout_constraintStart_toEndOf="@+id/textView37"
+                                    app:layout_constraintTop_toBottomOf="@+id/view5"
+                                    app:met_hideUnderline="true" />
+
+                                <View
+                                    android:id="@+id/view12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="#D8D8D8"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/task_edit_unit_point" />
+
+                                <TextView
+                                    android:id="@+id/textView38"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:fontFamily="@font/ali_puhui_regular"
+                                    android:text="总积分"
+                                    android:textColor="@color/default_black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/view12" />
+
+                                <TextView
+                                    android:id="@+id/task_edit_total_point"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/ali_puhui_regular"
+                                    android:textColor="@color/default_black"
+                                    android:textSize="16sp"
+                                    android:text='@{viewModel.model.totalData==0||viewModel.model.task.unitPoint==null||viewModel.model.task.unitPoint==0?"待计算":String.valueOf(viewModel.model.totalData*viewModel.model.task.unitPoint)}'
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView38"
+                                    app:layout_constraintHorizontal_weight="1"
+                                    app:layout_constraintStart_toStartOf="@+id/task_edit_unit_point"
+                                    app:layout_constraintTop_toTopOf="@+id/textView38" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.echo.datatag3.widget.ExpandableLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView25"
+                    style="@style/FORM_PAGE_CLASS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="评测设置"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/taskSettingsLayout" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/default_white"
+                    app:cardCornerRadius="5dp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/appCompatTextView"
+                            style="@style/FORM_PAGE_TITLE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="评测场景类型"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="3dp"
+                            android:src="@drawable/common_hint_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
+                            app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+                            app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
+
+                        <Spinner
+                            android:id="@+id/task_edit_tag_scene_type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:entries="@array/tagging_scene_type"
+                            app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toEndOf="@+id/imageView2"
+                            app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
+
+                        <com.echo.datatag3.widget.ExpandableLayout
+                            android:id="@+id/expandableLayout1"
+                            expanded="@{viewModel.model.task.taggingSceneType==1}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/default_white"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <View
+                                    android:id="@+id/view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="#D8D8D8"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    style="@style/FORM_PAGE_TITLE"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:text="标签选项列表 (长按删除)"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/task_edit_label_classification_add_option"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:background="#00000000"
+                                    android:onClick="@{()->viewModel.addTagOption()}"
+                                    android:src="@drawable/common_add_circle_gray"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/options"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:adapter="@{viewModel.model.tagOptionsAdapter}"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    style="@style/FORM_PAGE_TITLE"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="可多选"
+                                    android:textSize="14sp"
+                                    android:layout_marginStart="5dp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/multi_select"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/multi_select" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@+id/multi_select"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:thumb="@drawable/switch_thumb"
+                                    app:layout_constraintStart_toEndOf="@+id/textView8"
+                                    app:layout_constraintTop_toBottomOf="@+id/options"
+                                    app:track="@drawable/switch_track_style" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    style="@style/FORM_PAGE_TITLE"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:text="可自定义选项"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/multi_select"
+                                    app:layout_constraintStart_toEndOf="@+id/multi_select"
+                                    app:layout_constraintTop_toTopOf="@+id/multi_select" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@+id/custom_option"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:thumb="@drawable/switch_thumb"
+                                    app:layout_constraintStart_toEndOf="@+id/textView14"
+                                    app:layout_constraintTop_toBottomOf="@+id/options"
+                                    app:track="@drawable/switch_track_style" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.echo.datatag3.widget.ExpandableLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

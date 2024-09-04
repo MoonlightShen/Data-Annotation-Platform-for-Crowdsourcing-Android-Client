@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="5dp"
+    android:background="@color/default_white"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/task_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:text="任务标题任务标题任务标题任务标题"
+            android:maxWidth="290dp"
+            android:singleLine="true"
+            android:textColor="@color/task_title_color"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/task_state_running"
+            app:layout_constraintBottom_toBottomOf="@+id/textView44"
+            app:layout_constraintEnd_toStartOf="@+id/textView44"
+            app:layout_constraintTop_toTopOf="@+id/textView44" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:text="进行中"
+            android:textColor="@color/default_green"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/task_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_title" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/common_clock_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:text="剩余时间"
+            android:textColor="@color/default_gray"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/task_remaining_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:textColor="@color/default_gray"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/textView46"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            tools:text="29天23时59分59秒" />
+
+        <TextView
+            android:id="@+id/task_remaining_time_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ali_puhui_regular"
+            tools:text="89%"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/task_remaining_time_progress"
+            app:layout_constraintEnd_toEndOf="@+id/task_remaining_time"
+            app:layout_constraintTop_toTopOf="@+id/task_remaining_time_progress" />
+
+        <com.fphoenixcorneae.progressbar.SmartProgressBar
+            android:id="@+id/task_remaining_time_progress"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/task_remaining_time_percent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView46"
+            app:spb_animated="true"
+            app:spb_animated_duration="2000"
+            app:spb_bottom_left_radius="20dp"
+            app:spb_bottom_right_radius="20dp"
+            app:spb_max="100"
+            app:spb_progress_bar_bg_color="@color/light_gray"
+            app:spb_progress_center_color="#77A6E1"
+            app:spb_progress_end_color="#74BEEB"
+            app:spb_progress_start_color="#3FD2EF"
+            app:spb_shape_style="HORIZONTAL"
+            app:spb_top_left_radius="20dp"
+            app:spb_top_right_radius="20dp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/common_complete_progress_gray"
+            app:layout_constraintStart_toEndOf="@+id/task_remaining_time"
+            app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:text="剩余指标"
+            android:textColor="@color/default_gray"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/task_remaining_quota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:textColor="@color/default_gray"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/textView49"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            tools:text="12" />
+
+        <com.fphoenixcorneae.progressbar.SmartProgressBar
+            android:id="@+id/task_remaining_quota_progress"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/task_remaining_time_progress"
+            app:spb_animated="true"
+            app:spb_animated_duration="2000"
+            app:spb_bottom_left_radius="20dp"
+            app:spb_bottom_right_radius="20dp"
+            app:spb_max="100"
+            app:spb_progress_bar_bg_color="@color/light_gray"
+            app:spb_progress_center_color="#77A6E1"
+            app:spb_progress_end_color="#74BEEB"
+            app:spb_progress_start_color="#3FD2EF"
+            app:spb_shape_style="HORIZONTAL"
+            app:spb_top_left_radius="20dp"
+            app:spb_top_right_radius="20dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="52dp"
+            android:src="@drawable/test_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="39dp"
+            android:src="@drawable/female_default_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="26dp"
+            android:src="@drawable/female_default_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/male_default_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <TextView
+            android:id="@+id/task_apply_users_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_remaining_time_progress"
+            tools:text="99+人已参与" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/common_like_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/like_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/like_num" />
+
+        <TextView
+            android:id="@+id/like_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/star_num"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/star_num"
+            tools:text="1000" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/common_star_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/star_num"
+            app:layout_constraintStart_toEndOf="@+id/like_num"
+            app:layout_constraintTop_toTopOf="@+id/star_num" />
+
+        <TextView
+            android:id="@+id/star_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/read_num"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/read_num"
+            tools:text="1000" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/common_read_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/read_num"
+            app:layout_constraintStart_toEndOf="@+id/star_num"
+            app:layout_constraintTop_toTopOf="@+id/read_num" />
+
+        <TextView
+            android:id="@+id/read_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            tools:text="1000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

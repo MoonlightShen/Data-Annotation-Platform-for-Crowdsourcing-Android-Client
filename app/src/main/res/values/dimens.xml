@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="default_pb_trace_width">16dp</dimen>
+    <dimen name="default_pb_progress_text_size">28sp</dimen>
+    <dimen name="default_pb_corner_radius">5dp</dimen>
+    <dimen name="default_pb_horizontal_text_size">14sp</dimen>
+    <dimen name="default_pb_zone_length">22dp</dimen>
+    <dimen name="default_pb_zone_width">6dp</dimen>
+    <dimen name="default_pb_zone_padding">16dp</dimen>
+    <dimen name="default_pb_zone_corner_radius">8dp</dimen>
+
+    <dimen name="default_tcv_text_size">14sp</dimen>
+    <dimen name="default_tcv_stroke_width">1dp</dimen>
+
+</resources>

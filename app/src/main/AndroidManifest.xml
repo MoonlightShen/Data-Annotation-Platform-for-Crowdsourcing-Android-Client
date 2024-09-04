@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:node="replace" />
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_AUDIO"
+        tools:node="replace" />
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_VIDEO"
+        tools:node="replace" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DataTag2"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".mvvm.view.LabelClassificationTaggingPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.task.UncompletedTaskListPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.DataFileTextContentPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.TestPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.TaskManagePage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.LoadingErrorPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.task.TaskCompletedInfoPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.task.TaskCommonInfoPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.TaskRequestReplyInfoPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.HandleTaskRequestPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.ChooseDataFilePage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.task.TaskDetailsPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.PrivateChatView"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.DataFileManage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.SystemNoticeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.FriendRequestCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.UserInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.FriendRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.UserInfoEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.TeamNoticeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.FriendRequestListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.list.HistoricalTaskListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.task.TaskEditingInfoPage"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mvvm.view.WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

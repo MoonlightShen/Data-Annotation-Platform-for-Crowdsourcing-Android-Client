@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="5dp"
+    android:background="@color/default_white"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/task_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:text="任务标题任务标题任务标题任务标题"
+            android:maxWidth="290dp"
+            android:singleLine="true"
+            android:textColor="@color/task_title_color"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/task_state_completed"
+            app:layout_constraintBottom_toBottomOf="@+id/textView44"
+            app:layout_constraintEnd_toStartOf="@+id/textView44"
+            app:layout_constraintTop_toTopOf="@+id/textView44" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ali_puhui_bold"
+            android:text="已完成"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/task_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/task_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/task_number_of_tagging_results"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:text="标注结果数量"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView2"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView2" />
+
+        <TextView
+            android:id="@+id/task_answer_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            tools:text="18"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+            app:layout_constraintStart_toEndOf="@+id/textView51"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView2" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="52dp"
+            android:src="@drawable/test_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="39dp"
+            android:src="@drawable/female_default_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="26dp"
+            android:src="@drawable/female_default_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/male_default_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/apply_user_avatar_1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintEnd_toStartOf="@+id/task_apply_users_num"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            app:round="10dp" />
+
+        <TextView
+            android:id="@+id/task_apply_users_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
+            tools:text="99+人已参与" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/common_like_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/like_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/like_num" />
+
+        <TextView
+            android:id="@+id/like_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/star_num"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/star_num"
+            tools:text="1000" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/common_star_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/star_num"
+            app:layout_constraintStart_toEndOf="@+id/like_num"
+            app:layout_constraintTop_toTopOf="@+id/star_num" />
+
+        <TextView
+            android:id="@+id/star_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/read_num"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/read_num"
+            tools:text="1000" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/common_read_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/read_num"
+            app:layout_constraintStart_toEndOf="@+id/star_num"
+            app:layout_constraintTop_toTopOf="@+id/read_num" />
+
+        <TextView
+            android:id="@+id/read_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/ali_puhui_regular"
+            android:textColor="@color/default_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/task_apply_users_num"
+            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/task_apply_users_num"
+            tools:text="1000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

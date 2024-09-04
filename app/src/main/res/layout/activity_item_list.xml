@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.echo.datatag2.mvvm.viewmodel.ItemListViewModel" />-->
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        tools:context=".mvvm.view.ItemListActivity"
+        android:orientation="vertical">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/list_tb_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F4F3F8"
+            app:leftIcon="@drawable/common_left_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rightIcon="@drawable/common_search_gray"
+            app:rightIconPadding="10dp"
+            tools:title="标题"/>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/list_srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_bg"/>
+
+            <com.classic.common.MultipleStatusView
+                android:id="@+id/status_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+
+<!--                   <com.echo.datatag3.widget.stickyhead.StickyHeadContainer-->
+<!--                       android:id="@+id/sticky_container"-->
+<!--                       android:layout_width="match_parent"-->
+<!--                       android:layout_height="wrap_content"-->
+<!--                       app:layout_constraintStart_toStartOf="parent"-->
+<!--                       app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                       <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                           android:layout_width="match_parent"-->
+<!--                           android:layout_height="wrap_content"-->
+<!--                           android:background="@color/default_white"-->
+<!--                           android:padding="10dp">-->
+
+<!--                           <TextView-->
+<!--                               android:id="@+id/sticky_title"-->
+<!--                               app:layout_constraintStart_toStartOf="parent"-->
+<!--                               app:layout_constraintTop_toTopOf="parent"-->
+<!--                               android:layout_width="wrap_content"-->
+<!--                               android:layout_height="wrap_content"-->
+<!--                               style="@style/FORM_PAGE_TITLE"-->
+<!--                               tools:text="标题"/>-->
+
+<!--                       </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--                   </com.echo.datatag3.widget.stickyhead.StickyHeadContainer>-->
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/list_recycler"
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"
+                       android:background="@color/app_bg"
+                       android:overScrollMode="never"
+                       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.classic.common.MultipleStatusView>
+
+            <com.scwang.smart.refresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_bg"/>
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+</layout>

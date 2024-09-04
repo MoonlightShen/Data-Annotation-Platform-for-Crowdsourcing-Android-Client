@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="search_setting_sort_index">
+        <item>点赞量</item>
+        <item>收藏量</item>
+        <item>浏览量</item>
+    </string-array>
+
+    <string-array name="search_setting_sort_index_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="data_file_type">
+        <item>文本</item>
+        <item>图片</item>
+        <item>视频</item>
+    </string-array>
+
+    <string-array name="tagging_scene_type">
+        <item>标签分类</item>
+        <item>图像标注</item>
+        <item>文本理解</item>
+        <item>多媒体标注</item>
+    </string-array>
+    
+    <string-array name="contacts_type">
+        <item>好友</item>
+        <item>团队</item>
+    </string-array>
+
+    <string-array name="gender_type">
+        <item>不方便透露</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+
+</resources>
