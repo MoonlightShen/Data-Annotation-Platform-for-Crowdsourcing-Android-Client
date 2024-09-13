@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.echo.dapc.mvvm.viewmodel.WorkBenchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        tools:context=".mvvm.view.fragment.WorkBenchFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/workbench_uncomplete_tasks_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:fontFamily="@font/ali_puhui_bold"
+                    android:text="未完成任务数"
+                    android:textColor="#CC15435E"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/workbench_tv_uncomplete_num"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/workbench_tv_uncomplete_num" />
+
+                <TextView
+                    android:id="@+id/workbench_tv_uncomplete_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/ali_puhui_bold"
+                    android:text="0"
+                    android:textColor="#CC15435E"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView9"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="200dp"
+                    android:fontFamily="@font/ali_puhui_bold"
+                    android:text="暂时没有未完成任务哦~      快点击下方推荐任务接取吧"
+                    android:textColor="#8815435E"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/workbench_tv_uncomplete_num" />
+
+                <!--                                <TextView-->
+                <!--                                    android:id="@+id/textView11"-->
+                <!--                                    android:layout_width="wrap_content"-->
+                <!--                                    android:layout_height="wrap_content"-->
+                <!--                                    android:layout_marginTop="5dp"-->
+                <!--                                    android:fontFamily="@font/ali_puhui_bold"-->
+                <!--                                    android:text="完成进度"-->
+                <!--                                    android:textColor="#CC023043"-->
+                <!--                                    android:textSize="14sp"-->
+                <!--                                    app:layout_constraintStart_toStartOf="@+id/textView9"-->
+                <!--                                    app:layout_constraintTop_toBottomOf="@+id/textView9" />-->
+
+                <!--                <com.echo.datatag3.widget.ProgressBar-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="30dp"-->
+                <!--                    android:layout_marginBottom="10dp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintEnd_toStartOf="@+id/imageView9"-->
+                <!--                    app:layout_constraintStart_toStartOf="@+id/textView11"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/textView11"-->
+                <!--                    app:pb_end_color="@color/colorPrimaryDark"-->
+                <!--                    app:pb_end_progress="92"-->
+                <!--                    app:pb_isTracked="true"-->
+                <!--                    app:pb_progress_duration="2600"-->
+                <!--                    app:pb_progress_textColor="#696969"-->
+                <!--                    app:pb_progress_textVisibility="false"-->
+                <!--                    app:pb_start_color="@color/colorPrimary"-->
+                <!--                    app:pb_track_color="#f4f4f4"-->
+                <!--                    app:pb_track_width="8dp" />-->
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/workbench_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/default_white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            android:onClick="@{()->viewModel.search()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workbench_uncomplete_tasks_cardview">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="49dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/common_search_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发现更多的任务"
+                    android:fontFamily="@font/ali_puhui_bold"
+                    android:textColor="@color/default_gray"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/smart_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBtn"
+            app:layout_constraintVertical_weight="1">
+
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.classic.common.MultipleStatusView
+                android:id="@+id/recommendations_status_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    android:adapter="@{viewModel.model.taskAdapter}"
+                    tools:listitem="@layout/task_running"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            </com.classic.common.MultipleStatusView>
+
+            <com.scwang.smart.refresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

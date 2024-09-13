@@ -8,10 +8,10 @@
 
         <variable
             name="viewModel"
-            type="com.echo.datatag3.mvvm.viewmodel.HomeViewModel" />
+            type="com.echo.dapc.mvvm.viewmodel.HomeViewModel" />
     </data>
 
-    <com.echo.datatag3.widget.slidemenu.SlideMenuLayout
+    <com.echo.dapc.widget.slidemenu.SlideMenuLayout
         android:id="@+id/left_slide_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -365,6 +365,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </com.echo.datatag3.widget.slidemenu.SlideMenuLayout>
+    </com.echo.dapc.widget.slidemenu.SlideMenuLayout>
 
 </layout>
