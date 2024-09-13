@@ -29,43 +29,40 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".mvvm.view.LabelClassificationTaggingPage"
+            android:name=".mvvm.view.LabelClassificationTaggingActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.task.UncompletedTaskListPage"
+            android:name=".mvvm.view.task.UncompletedTaskListActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.DataFileTextContentPage"
-            android:exported="false" />
-        <activity
-            android:name=".mvvm.view.TestPage"
+            android:name=".mvvm.view.DataFileTextContentActivity"
             android:exported="false" />
         <activity
             android:name=".mvvm.view.list.TaskManagePage"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.LoadingErrorPage"
+            android:name=".mvvm.view.LoadingErrorActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.task.TaskCompletedInfoPage"
+            android:name=".mvvm.view.task.TaskCompletedInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.task.TaskCommonInfoPage"
+            android:name=".mvvm.view.task.TaskCommonInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.TaskRequestReplyInfoPage"
+            android:name=".mvvm.view.TaskRequestReplyInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.HandleTaskRequestPage"
+            android:name=".mvvm.view.HandleTaskRequestActivity"
             android:exported="false" />
         <activity
             android:name=".mvvm.view.list.ChooseDataFilePage"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.task.TaskDetailsPage"
+            android:name=".mvvm.view.task.TaskDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.PrivateChatView"
+            android:name=".mvvm.view.PrivateChatActivity"
             android:exported="false" />
         <activity
             android:name=".mvvm.view.list.DataFileManage"
@@ -98,7 +95,7 @@
             android:name=".mvvm.view.list.HistoricalTaskListActivity"
             android:exported="false" />
         <activity
-            android:name=".mvvm.view.task.TaskEditingInfoPage"
+            android:name=".mvvm.view.task.TaskEditingInfoActivity"
             android:exported="false" />
         <activity
             android:name=".mvvm.view.RegisterActivity"

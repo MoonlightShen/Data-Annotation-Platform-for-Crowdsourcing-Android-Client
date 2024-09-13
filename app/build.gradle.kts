@@ -8,16 +8,16 @@ plugins {
 
 greendao {
     schemaVersion =1 //数据库版本号
-    daoPackage = "com.echo.datatag3.database"
+    daoPackage = "com.echo.dapc.database"
     generateTests =false //设置为true以自动生成单元测试。
 }
 
 android {
-    namespace = "com.echo.datatag3"
+    namespace = "com.echo.dapc"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.echo.datatag3"
+        applicationId = "com.echo.dapc"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

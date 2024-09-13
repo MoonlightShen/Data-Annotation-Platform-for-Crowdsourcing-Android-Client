@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.echo.dapc.mvvm.viewmodel.taskinfo.TaskCompletedInfoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        tools:context=".mvvm.view.task.TaskCompletedInfoActivity">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/task_info_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftIcon="@drawable/common_left_gray"
+            app:rightIcon="@drawable/common_menu_gray"
+            app:title="任务详情" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/default_white"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_info_title_bar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView108"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="标题"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:autoSizeMaxTextSize="16sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@{viewModel.model.title}"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView108"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView108"
+                    app:layout_constraintTop_toTopOf="@+id/textView108"
+                    tools:text="这是标题这是标题这是标题这是标题这是标题这是标题这是标题" />
+
+                <TextView
+                    android:id="@+id/textView110"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="开始时间"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView108" />
+
+                <TextView
+                    android:id="@+id/textView118"
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    zh_yyyyMMddHHmm="@{viewModel.model.endTime}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView110"
+                    app:layout_constraintStart_toEndOf="@+id/textView110"
+                    app:layout_constraintTop_toTopOf="@+id/textView110"
+                    tools:text="2024年09月01日 12:00" />
+
+                <TextView
+                    android:id="@+id/textView111"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="截止时间"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView110" />
+
+                <TextView
+                    android:id="@+id/textView112"
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    zh_yyyyMMddHHmm="@{viewModel.model.endTime}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView111"
+                    app:layout_constraintStart_toEndOf="@+id/textView111"
+                    app:layout_constraintTop_toTopOf="@+id/textView111"
+                    tools:text="2024年10月01日 12:00" />
+
+                <TextView
+                    android:id="@+id/textView113"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="数据量"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView111" />
+
+                <TextView
+                    android:id="@+id/textView114"
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@{viewModel.model.totalData}"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView113"
+                    app:layout_constraintStart_toEndOf="@+id/textView113"
+                    app:layout_constraintTop_toTopOf="@+id/textView113"
+                    tools:text="100" />
+
+                <TextView
+                    android:id="@+id/textView115"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="12dp"
+                    android:text="完成率"
+                    app:layout_constraintStart_toEndOf="@+id/textView114"
+                    app:layout_constraintTop_toBottomOf="@+id/textView111" />
+
+                <TextView
+                    android:id="@+id/textView116"
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text='@{viewModel.model.completionRate==null?"":String.valueOf(viewModel.model.completionRate)+"%"}'
+                    app:layout_constraintBottom_toBottomOf="@+id/textView113"
+                    app:layout_constraintStart_toEndOf="@+id/textView115"
+                    app:layout_constraintTop_toTopOf="@+id/textView113"
+                    tools:text="100%" />
+
+                <TextView
+                    android:id="@+id/textView117"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="结余积分"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView113" />
+
+                <TextView
+                    android:id="@+id/textView120"
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text='@{viewModel.model.remainingPoint}'
+                    app:layout_constraintBottom_toBottomOf="@+id/textView117"
+                    app:layout_constraintStart_toEndOf="@+id/textView117"
+                    app:layout_constraintTop_toTopOf="@+id/textView117"
+                    tools:text="0" />
+
+                <TextView
+                    android:id="@+id/textView122"
+                    style="@style/TASK_INFO_PAGE_TITLE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="参与用户数量"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView117" />
+
+                <TextView
+                    style="@style/TASK_INFO_PAGE_CONTENT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text='@{viewModel.model.applyUsers==null?"":String.valueOf(viewModel.model.applyUsers.size)}'
+                    app:layout_constraintBottom_toBottomOf="@+id/textView122"
+                    app:layout_constraintStart_toEndOf="@+id/textView122"
+                    app:layout_constraintTop_toTopOf="@+id/textView122"
+                    tools:text="0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView119"
+            style="@style/TASK_INFO_PAGE_TITLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="提交记录"
+            app:layout_constraintStart_toStartOf="@+id/cardView6"
+            app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/task_submit_record"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView119" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

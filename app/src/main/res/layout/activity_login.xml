@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.echo.datatag3.mvvm.viewmodel.LoginViewModel" />
+            type="com.echo.dapc.mvvm.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

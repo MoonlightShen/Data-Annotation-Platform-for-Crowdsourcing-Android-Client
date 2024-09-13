@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.echo.datatag3.mvvm.viewmodel.SettingsViewModel" />
+            type="com.echo.dapc.mvvm.viewmodel.SettingsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
